@@ -3,29 +3,34 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: "Young Song"
 
 # Short bio or description (displayed in the header)
-description: DREAM Project
+description: "NSF DREAM Research Project"
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar: https://github.com/YoungSong99.png
 
 #
 # Flags below are optional
 #
+author: "Young Song"
+affiliation: "DePaul University"
+email: Hsong20@depaul.edu
+linkedin: youngsong-us
+github: YoungSong99
 
 # Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: yourmail@mail.com
+footer-links: 
+  linkedin: youngsong-us
+  email: Hsong20@depaul.edu
   facebook:
   flickr:
-  rss: # just type anything here for a working RSS icon
+  rss: feed
 
 # Your website URL (e.g. http://ajstent.github.io)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: https://YoungSong99.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -70,5 +75,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
-theme: jekyll-theme-cayman

@@ -2,11 +2,49 @@
 layout: default
 ---
 
-<article class="page">
+<div class="doc-layout">
 
-  <h1>{{ page.title }}</h1>
+  <!-- ── Body ─────────────────────────────── -->
+  <article class="doc-body">
 
-  <div class="entry">
-    {{ content }}
-  </div>
-</article>
+    <header class="page-header">
+      {% if page.section %}
+        <p class="breadcrumb">{{ page.section }}</p>
+      {% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="page-lead">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="entry">
+      {{ content }}
+    </div>
+
+    <div class="doc-feedback">
+      <a href="mailto:{{ site.email }}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        Feedback
+      </a>
+    </div>
+
+  </article>
+
+  <!-- ── Annotations ───────────────────────── -->
+  <aside class="doc-annotations" aria-label="Page notes">
+    <div class="annot">
+      {% if page.annotations %}
+        {% for item in page.annotations %}
+          <div class="annot-item">
+            <div class="annot-title">{{ item.title }}</div>
+            {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </aside>
+
+</div>

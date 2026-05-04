@@ -4,12 +4,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+  <title>404 - Page not found – Young Song</title>
 
-  {% include meta.html %}
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.baseurl }}/feed.xml" />
+    
+    <meta name="description" content="NSF DREAM Research Project">
+    <meta property="og:description" content="NSF DREAM Research Project" />
+    
+    <meta name="author" content="Young Song" />
+
+    
+    <meta property="og:title" content="404 - Page not found" />
+    <meta property="twitter:title" content="404 - Page not found" />
+    
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Young Song" href="/feed.xml" />
 </head>
 
 <body>
@@ -19,17 +33,17 @@
 
     <!-- Avatar + Author info -->
     <div class="sidebar-author">
-      <a href="{{ site.baseurl }}/" class="site-avatar">
-        <img src="{{ site.avatar }}" alt="{{ site.name }}" />
+      <a href="/" class="site-avatar">
+        <img src="https://github.com/YoungSong99.png" alt="Young Song" />
       </a>
       <div class="author-info">
-        <span class="author-name">{{ site.author | default: site.name }}</span>
-        {% if site.affiliation %}
-        <span class="author-affil">{{ site.affiliation }}</span>
-        {% endif %}
-        {% if site.description %}
-        <span class="author-desc">{{ site.description }}</span>
-        {% endif %}
+        <span class="author-name">Young Song</span>
+        
+        <span class="author-affil">DePaul University</span>
+        
+        
+        <span class="author-desc">NSF DREAM Research Project</span>
+        
       </div>
     </div>
 
@@ -45,7 +59,7 @@
       <!-- Overview (Home) -->
       <ul class="nav-section-links nav-top">
         <li>
-          <a href="{{ site.baseurl }}/" {% if page.url=='/' %}class="active" {% endif %}>
+          <a href="/" >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               aria-hidden="true">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -61,7 +75,7 @@
         <span class="nav-section-label">Research Log</span>
         <ul class="nav-section-links">
           <li></li>
-          <a href="{{ site.baseurl }}/blog/" class="nav-toggle">
+          <a href="/blog/" class="nav-toggle">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               aria-hidden="true">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -70,13 +84,13 @@
             Weekly Logs
           </a>
           <ul class="nav-sub">
-            {% for post in site.posts reversed %}
+            
             <li>
-              <a href="{{ site.baseurl }}{{ post.url }}" {% if page.url==post.url %}class="active" {% endif %}>
-                {{ post.title }}
+              <a href="/week1/" >
+                Week 1
               </a>
             </li>
-            {% endfor %}
+            
           </ul>
           </li>
         </ul>
@@ -87,7 +101,7 @@
         <span class="nav-section-label">Results</span>
         <ul class="nav-section-links">
           <li>
-            <a href="{{ site.baseurl }}/results/" {% if page.url contains '/results' %}class="active" {% endif %}>
+            <a href="/results/" >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <line x1="18" y1="20" x2="18" y2="10" />
@@ -105,7 +119,7 @@
         <span class="nav-section-label">Deliverables</span>
         <ul class="nav-section-links">
           <li>
-            <a href="{{ site.baseurl }}/files/finalreport.pdf" target="_blank">
+            <a href="/files/finalreport.pdf" target="_blank">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -117,7 +131,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ site.github.repo | default: site.baseurl }}/code/" target="_blank">
+            <a href="/code/" target="_blank">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <polyline points="16 18 22 12 16 6" />
@@ -134,16 +148,16 @@
     <!-- Footer: social icons -->
     <div class="sidebar-footer">
       <div class="social-links">
-        {% if site.email %}
-        <a href="mailto:{{ site.email }}" class="social-link" title="Email" aria-label="Email">
+        
+        <a href="mailto:Hsong20@depaul.edu" class="social-link" title="Email" aria-label="Email">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <polyline points="2,4 12,13 22,4" />
           </svg>
         </a>
-        {% endif %}
-        {% if site.linkedin %}
-        <a href="https://linkedin.com/in/{{ site.linkedin }}" class="social-link" title="LinkedIn" aria-label="LinkedIn"
+        
+        
+        <a href="https://linkedin.com/in/youngsong-us" class="social-link" title="LinkedIn" aria-label="LinkedIn"
           target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <rect x="2" y="2" width="20" height="20" rx="3" />
@@ -152,9 +166,9 @@
             <path d="M12 16v-5m0 0a3 3 0 0 1 6 0v5" />
           </svg>
         </a>
-        {% endif %}
-        {% if site.github %}
-        <a href="https://github.com/{{ site.github }}" class="social-link" title="GitHub" aria-label="GitHub"
+        
+        
+        <a href="https://github.com/YoungSong99" class="social-link" title="GitHub" aria-label="GitHub"
           target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61
@@ -164,7 +178,7 @@
                      c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
           </svg>
         </a>
-        {% endif %}
+        
       </div>
     </div>
 
@@ -174,7 +188,44 @@
   <main class="main-content">
     <div class="doc-layout">
       <article class="doc-body">
-        {{ content }}
+        <div class="doc-layout">
+
+  <!-- ── Body ─────────────────────────────── -->
+  <article class="doc-body">
+
+    <header class="page-header">
+      
+      <h1>404 - Page not found</h1>
+      
+    </header>
+
+    <div class="entry">
+      <p>Sorry, we can’t find that page that you’re looking for. You can try again by going <a href="/">back to the homepage</a>.</p>
+
+<p><a href="/"><img src="/images/404.jpg" alt="Constructocat by https://github.com/jasoncostello" style="width: 400px;" /></a></p>
+
+    </div>
+
+    <div class="doc-feedback">
+      <a href="mailto:Hsong20@depaul.edu">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        Feedback
+      </a>
+    </div>
+
+  </article>
+
+  <!-- ── Annotations ───────────────────────── -->
+  <aside class="doc-annotations" aria-label="Page notes">
+    <div class="annot">
+      
+    </div>
+  </aside>
+
+</div>
       </article>
     </div>
   </main>
@@ -196,7 +247,7 @@
     const results = document.getElementById("search-results");
 
     if (input) {
-      fetch("{{ site.baseurl }}/search.json")
+      fetch("/search.json")
         .then(res => res.json())
         .then(data => {
           input.addEventListener("input", () => {

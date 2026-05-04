@@ -2,15 +2,90 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+<div class="doc-layout">
 
-  <div class="entry">
-    {{ content }}
-  </div>
+  <!-- ── Body ─────────────────────────────── -->
+  <article class="doc-body">
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
+    <!-- Post header -->
+    <header class="post-header">
+      {% if page.category %}
+        <p class="breadcrumb">{{ page.category }}</p>
+      {% endif %}
 
-</article>
+      <h1>{{ page.title }}</h1>
+
+      <div class="post-meta">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+          {{ page.date | date: "%B %e, %Y" }}
+        </time>
+        {% if page.author %}
+          <span class="meta-sep">·</span>
+          <span>{{ page.author }}</span>
+        {% endif %}
+        {% if page.read_time %}
+          <span class="meta-sep">·</span>
+          <span>{{ page.read_time }} min read</span>
+        {% endif %}
+      </div>
+
+      {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </header>
+
+    <!-- Post content -->
+    <div class="entry">
+      {{ content }}
+    </div>
+
+    <!-- Prev / Next -->
+    <nav class="post-nav" aria-label="Post navigation">
+      {% if page.previous.url %}
+        <a href="{{ site.baseurl }}{{ page.previous.url }}" class="post-nav-link post-nav-prev">
+          <span class="post-nav-label">← Previous</span>
+          <span class="post-nav-title">{{ page.previous.title }}</span>
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+
+      {% if page.next.url %}
+        <a href="{{ site.baseurl }}{{ page.next.url }}" class="post-nav-link post-nav-next">
+          <span class="post-nav-label">Next →</span>
+          <span class="post-nav-title">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+
+    <div class="doc-feedback">
+      <a href="mailto:{{ site.email }}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2z"/>
+        </svg>
+        Feedback
+      </a>
+    </div>
+
+  </article>
+
+  <!-- ── Annotations ───────────────────────── -->
+  <aside class="doc-annotations" aria-label="Post notes">
+    <div class="annot">
+      {% if page.annotations %}
+        {% for item in page.annotations %}
+          <div class="annot-item">
+            <div class="annot-title">{{ item.title }}</div>
+            {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </aside>
+
+</div>
